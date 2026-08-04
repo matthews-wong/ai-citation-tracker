@@ -1,0 +1,24 @@
+# Example configuration for ai-citation-tracker.
+# Copy to config.yaml and edit for your brand, or run against this file directly
+# with the default MOCK engine (offline, deterministic, illustrative results).
+
+# The domain whose AI-answer-engine visibility you want to track.
+target: example.com
+
+# The queries a prospective customer might ask an AI answer engine. These are
+# what get run each time you `track`.
+queries:
+  - best project management software
+  - how to track SEO rankings
+  - top note taking apps for teams
+  - open source analytics tools
+  - affordable CRM for small business
+
+# Optional: override the pool of "well-known" domains the MOCK engine can cite.
+# The target above is always folded into this pool automatically, so it can
+# plausibly surface for some queries. Remove this block to use the built-in
+# defaults (see citationtracker/engines.py: DEFAULT_MOCK_DOMAINS).
+# mock_domains:
+#   - wikipedia.org
+#   - reddit.com
+#   - g2.com

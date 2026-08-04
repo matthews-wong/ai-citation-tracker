@@ -1,0 +1,5 @@
+click>=8.1
+PyYAML>=6.0
+
+# Optional, only needed for the real Claude answer engine (not the offline default):
+# anthropic>=0.40

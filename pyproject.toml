@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-citation-tracker"
+version = "0.1.0"
+description = "Track whether a domain/brand is cited by AI answer engines for tracked queries, over time (offline-first, MockEngine by default)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Matthews Wong" }]
+keywords = ["geo", "generative-engine-optimization", "ai-citations", "seo", "answer-engine"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click>=8.1",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic>=0.40"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+ai-citation-tracker = "citationtracker.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/matthews-wong"
+
+[tool.setuptools]
+packages = ["citationtracker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
